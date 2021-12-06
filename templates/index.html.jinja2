@@ -1,0 +1,31 @@
+{% extends "base.html.jinja2" %}
+{% block title %}{% endblock %}
+{% block content %}
+
+<p>Hi, this is a place for me to write about my hobbies, trips and projects. If you 
+want to reach out, you can send me an <a href="mailto:mail@trenton.cc" rel="me">email</a>
+or find me on <a href="https://mastodon.online/@trenton" rel="me">Mastodon</a> and 
+<a href="https://github.com/trenton-su" rel="me">GitHub</a>.</p>
+
+<div class="row">
+{% for f in posts if f["featured"] %}
+{% if loop.index <= 3 %}
+<div class="column">
+    <a href="posts/{{ f.slug }}.html">
+        <img class="featured" alt="{{ f.blurb }}" src="{{ f.gallery_image }}"></img>
+        <div class="overlay">
+            <div class="text">{{ f.title }}</div>
+        </div>
+    </a>
+</div>
+{% endif %}
+{% endfor %}
+</div>
+
+<ul class="posts">
+{% for p in posts if not p["featured"] %}
+<li><a href="posts/{{ p.slug }}.html">{{ p.title }}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}

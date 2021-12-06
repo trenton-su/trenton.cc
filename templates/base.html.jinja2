@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <title>{% block title %}{% endblock %}Trenton's world</title>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <header role="banner">
+        <h1><a class="h-card" href="https://trenton.cc">Trenton</a>'s world</h1>
+        <nav role="navigation">
+            <ul class="navbar">
+                <li class="navbar"><a href="/">Home</a></li>
+                <li class="navbar"><a href="/contact.html">Contact me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        {% block footer %}
+        {% endblock %}
+    </footer>
+</body>
+</html>
+
