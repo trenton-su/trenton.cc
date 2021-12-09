@@ -1,11 +1,15 @@
 {% extends "base.html.jinja2" %}
 {% block title %}{% endblock %}
 {% block content %}
-
-<p>Hi, this is a place for me to write about my hobbies, trips and projects. If you 
-want to reach out, you can send me an <a href="mailto:mail@trenton.cc" rel="me">email</a>
-or find me on <a href="https://mastodon.online/@trenton" rel="me">Mastodon</a> and 
+<div class="h-card">
+<a class="u-url" rel="me" href="https://trenton.cc"></a>
+<p class="p-note">I'm a software engineer and am interested in how technology can empower 
+communities to face our changing climate and strengthen democracies.</p>
+<p>If you want to reach out, you can send me an 
+<a class="u-email" href="mailto:mail@trenton.cc" rel="me">email</a> or find me on 
+<a href="https://mastodon.online/@trenton" rel="me">Mastodon</a> and 
 <a href="https://github.com/trenton-su" rel="me">GitHub</a>.</p>
+</div>
 
 <div class="row">
 {% for f in posts if f["featured"] %}

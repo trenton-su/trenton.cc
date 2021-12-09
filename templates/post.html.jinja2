@@ -1,7 +1,7 @@
 {% extends "base.html.jinja2" %}
 {% block title %}{{ post["title"] }} - {% endblock %}
 {% block content %}
-<article class="h-entry">
+<div class="h-entry">
 <a class="u-url" href="{{ post["url"] }}"><h2 class="p-name">{{ post["title"] }}</h2></a>
 <p>Published by <a class="p-author h-card" href="http://trenton.cc">Trenton</a>
 on <time class="dt-published" datetime={{ post["date"] }}>{{ post["date"] }}</time>
@@ -10,10 +10,12 @@ in
 {% for c in post["categories"] %}<a class="p-category">{{ c }}</a>{% endfor %}
 {% endif %}
 
-<p class="p-summary">{{ post["blurb"] }}</p>
-
 <div class="e-content">
 {{ post["content"] }}
 </div>
-</article>
+
+<link rel="webmention" href="https://webmention.io/trenton.cc/webmention" />
+<link rel="pingback" href="https://webmention.io/trenton.cc/xmlrpc" />
+
+</div>
 {% endblock %}
